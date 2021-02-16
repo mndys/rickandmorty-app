@@ -1,4 +1,7 @@
 .App {
   display: grid;
   gap: 20px;
+  grid-template-columns: repeat(auto-fit, 440px);
+  justify-content: center;
+  padding: 20px;
 }
