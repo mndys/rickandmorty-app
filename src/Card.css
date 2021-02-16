@@ -1,0 +1,16 @@
+.Card {
+  display: grid;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  padding-bottom: 80px;
+  background-color: whitesmoke;
+  box-shadow: 0 2px 4px #26262680;
+  border-radius: 5px;
+}
+
+.Card h2 {
+  word-wrap: break-word;
+  width: 100px;
+}
