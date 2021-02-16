@@ -8,9 +8,29 @@
   background-color: whitesmoke;
   box-shadow: 0 2px 4px #26262680;
   border-radius: 5px;
+  width: 400px;
+  margin: 0 auto;
+}
+
+.Card img {
+  margin: 0 auto;
+}
+
+.Card div {
+  width: 300px;
 }
 
 .Card h2 {
-  word-wrap: break-word;
-  width: 100px;
+  width: 300px;
+}
+
+.Card__img {
+  position: relative;
+}
+
+.dead {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 300px;
 }
