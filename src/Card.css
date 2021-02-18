@@ -3,34 +3,20 @@
   gap: 10px;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  padding-bottom: 80px;
   background-color: whitesmoke;
   box-shadow: 0 2px 4px #26262680;
   border-radius: 5px;
-  width: 400px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
 }
 
 .Card img {
   margin: 0 auto;
+  width: 200px;
+  height: 200px;
 }
 
 .Card div {
-  width: 300px;
-}
-
-.Card h2 {
-  width: 300px;
-}
-
-.Card__img {
-  position: relative;
-}
-
-.dead {
-  position: absolute;
-  top: 40px;
-  left: 0;
   width: 300px;
 }

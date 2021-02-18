@@ -1,38 +1,35 @@
 import { useState } from 'react'
 import './Card.css'
-import deceased from './assets/deceased.png'
 
-export default function Card({ name, status, species, origin, image }) {
-  const [isShowingDetails, setIsShowingDetails] = useState(false)
+export default function Card({ id, name, image }) {
+  const backside = 'https://rickandmortyapi.com/api/character/avatar/19.jpeg'
+  const [isHidingCard, setIsHidingCard] = useState(backside)
+  const cardStorage = []
+
+  function handleClick(event) {
+    turnCard(event)
+    storeCard(event)
+  }
+
+  function storeCard(event) {
+    cardStorage.push(event.target)
+    console.log(cardStorage)
+  }
+
+  function turnCard(event) {
+    isHidingCard !== backside
+      ? setIsHidingCard((event.target.src = backside))
+      : setIsHidingCard((event.target.src = image))
+  }
 
   return (
     <section className="Card">
-      <h2>Hi! My name is {name}.</h2>
-      <div class="Card__img">
-        <img src={image} alt="" />
-        {status === 'dead' && <img className="dead" src={deceased} alt="" />}
-      </div>
-      <button
-        onClick={event => {
-          event.stopPropagation()
-          setIsShowingDetails(!isShowingDetails)
-        }}
-      >
-        {isShowingDetails ? 'Hide Details' : 'Show Details'}
-      </button>
-      {isShowingDetails && (
-        <div>
-          <h3>
-            I am {species === 'Alien' ? 'an ' + species : 'a ' + species} and
-            currently{' '}
-            {status === 'unknown'
-              ? 'it is not known whether I’m alive or dead'
-              : status}
-            .
-          </h3>
-          <p>My place of origin is {origin}.</p>
-        </div>
-      )}
+      <img
+        src={backside}
+        alt={isHidingCard === image ? name : ''}
+        onClick={handleClick}
+        open={isHidingCard === image}
+      />
     </section>
   )
 }

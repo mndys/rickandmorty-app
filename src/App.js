@@ -3,17 +3,17 @@ import Card from './Card'
 import './App.css'
 
 function App() {
+  const characters = data.results
+  const shuffledCharacters = characters
+    .sort(() => Math.random() - 0.5)
+    .splice(0, 5)
+    .flatMap(shuffledCharacter => [shuffledCharacter, shuffledCharacter])
+    .sort(() => Math.random() - 0.5)
+
   return (
     <div className="App">
-      {data.results.map(({ name, status, species, origin, id, image }) => (
-        <Card
-          key={id}
-          name={name}
-          status={status.toLowerCase()}
-          species={species}
-          origin={origin.name}
-          image={image}
-        />
+      {shuffledCharacters.map(({ id, image, name, open }) => (
+        <Card key={id} image={image} name={name} />
       ))}
     </div>
   )
