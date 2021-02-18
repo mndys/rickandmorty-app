@@ -28,7 +28,7 @@ export default function Card({ id, name, image }) {
         src={backside}
         alt={isHidingCard === image ? name : ''}
         onClick={handleClick}
-        open={isHidingCard === image}
+        open={isHidingCard === image ? true : false}
       />
     </section>
   )
