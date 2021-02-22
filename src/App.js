@@ -31,7 +31,7 @@ function App() {
         ) ||
         cards.includes(id + 'copy')
       ) {
-        if (!pairs.includes(id) || !cards.icludes(id)) {
+        if (!pairs.includes(id) || !cards.includes(id)) {
           setPairs([...pairs, ...cards, id])
         }
         setCards([])
@@ -54,10 +54,8 @@ function App() {
       alert('🎉 YOU 🍾 WON 🥂 !!! 🥳')
   }, [pairs, shuffledCharacters]) */
 
-  function resetGame(event) {
-    event.preventDefault()
-    setPairs([])
-    setCards([])
+  function resetGame() {
+    window.location.reload()
   }
 
   return (
