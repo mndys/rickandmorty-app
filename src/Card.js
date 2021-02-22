@@ -1,31 +1,11 @@
-import { useState } from 'react'
 import './Card.css'
 
-export default function Card({ storeCard, id, name, image }) {
+export default function Card({ id, name, image, handleClick, isTurned }) {
   const backside = 'https://rickandmortyapi.com/api/character/avatar/19.jpeg'
-  const [isHidingCard, setIsHidingCard] = useState(backside)
-
-  function handleClick(event) {
-    turnCard(event)
-    storeCard(event)
-  }
-
-  function turnCard(event) {
-    isHidingCard !== backside
-      ? setIsHidingCard((event.target.src = backside))
-      : setIsHidingCard((event.target.src = image))
-  }
 
   return (
-    <>
-      <section className="Card">
-        <img
-          src={backside}
-          alt={isHidingCard === image ? name : ''}
-          onClick={handleClick}
-          open={isHidingCard === image ? true : false}
-        />
-      </section>
-    </>
+    <section className="Card" onClick={() => handleClick(id)}>
+      <img src={isTurned ? image : backside} alt={isTurned ? name : ''} />
+    </section>
   )
 }
